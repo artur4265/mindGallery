@@ -42,24 +42,35 @@ get_header(); ?>
 								$imgUrl = types_render_field('upload-foto', array("size"=>"thumbnail","url"=>"true"));
 							?>
 
-							<div class="mdl-card mdl-shadow--2dp">
+							<!-- <div class="mdl-card mdl-shadow--2dp">
 								<a href="<?=$imgUrl?>" data-lightbox="roadtrip">
-								<?php echo types_render_field('upload-foto', array());  ?>
+								<?php //echo types_render_field('upload-foto', array());  ?>
 								</a>
-							</div> 
-
-
-								<div class="demo-card-image mdl-card mdl-shadow--2dp">
-								  <div class="mdl-card__title mdl-card--expand"></div>
-								  <div class="mdl-card__actions">
-								  	
-								    <span class="demo-card-image__filename">Image.jpg</span>
-								  </div>
+							</div>  -->
+							<div class="mdl-grid">
+								<!-- foto -->
+								<div class="detali-foto mdl-cell mdl-cell--8-col">
+									<a href="<?=$imgUrl?>" data-lightbox="roadtrip">
+										<?php echo types_render_field('upload-foto', array());  ?>
+									</a>
+									<div class="detali-foto-name">
+										<?php the_title( '<span class="demo-card-image__filename">', '</span>' ); ?>
+									</div>
 								</div>
+
+								<!-- text -->
+								<div class="detali-foto-text mdl-cell mdl-cell--4-col">
+									<?php echo do_shortcode( '[contact-form-7 id="52" title="Contact form detali foto ru"]' ); ?>
+									<?php the_content(); ?>
+								</div>
+
+								<!-- form -->
+
+							</div>
+
+
+
 								
-
-
-								<?php the_content(); ?>
 								<?php
 									wp_link_pages( array(
 										'before' => '<div class="page-links">' . __( 'Pages:', 'materialwp' ),
