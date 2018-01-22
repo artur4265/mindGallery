@@ -35,10 +35,41 @@ $args = array(
 	'taxonomy'                 => 'catfoto',
 	'pad_counts'               => true );
  
-$catlist = get_categories($args);
-foreach ($catlist as $categories_item) {
-	echo "<li><a href=\"/catfoto/$categories_item->slug\">" . $categories_item->cat_name . "</a><br><span class=\"small-text\">" . $categories_item->category_description . "</span></li>";
-}
+	
+	
+	$catlist = get_categories($args);
+	foreach ($catlist as $categories_item) {
+		//echo "<li><a href=\"/catfoto/$categories_item->slug\">" . $categories_item->cat_name . "</a><br><span class=\"small-text\">" . $categories_item->category_description . "</span></li>";
+		echo '<div class="
+		mdl-cell 
+		mdl-cell--3-col 
+		mdl-cell--4-col-tablet">
+		<div class="rw-card mdl-card rw-card--media-short mdl-shadow--2dp">
+		  
+		  <div class="rw-card__content">
+			<h2 class="rw-card__title">
+			  <a href="/guides/hiring-shape-the-candidate-experience/">
+			  ' . $categories_item->cat_name . '
+			  </a>
+			</h2>
+			<div class="rw-card__body">
+			  <a href="/guides/hiring-shape-the-candidate-experience/">
+				Creating a positive candidate experience can boost interview satisfaction and influence a candida...
+			  </a>
+			</div>
+			<div class="rw-card__actions">
+			  
+				<span class="rw-card__meta">7 steps</span>
+				<span class="rw-card__meta">1 tool</span>
+				<a href="/guides/hiring-shape-the-candidate-experience/" class="rw-card__end mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+				  <i class="material-icons">arrow_forward</i>
+				<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+			  
+			</div>
+		  </div>
+		</div>
+		</div>';
+	}
 
 
 ?>

@@ -60,7 +60,7 @@ get_header(); ?>
 
 								<!-- text -->
 								<div class="detali-foto-text mdl-cell mdl-cell--4-col">
-									<?php echo do_shortcode( '[contact-form-7 id="52" title="Contact form detali foto ru"]' ); ?>
+									<?php echo do_shortcode( '[contact-form-7 id="34" title="Contact form 1"]' ); ?>
 									<?php the_content(); ?>
 								</div>
 
@@ -83,6 +83,18 @@ get_header(); ?>
 		<script src="/wp-content/themes/materialwp-materialwp/js/lightbox/js/lightbox-2.6.min.js"></script>
 
 							<footer class="entry-footer">
+								<script>
+									jQuery(document).ready(function($) {
+										$('input').blur(function() {
+											var $this = $(this);
+											if ($this.val()) {
+												$this.addClass('used');
+											} else {
+												$this.removeClass('used');
+											}
+										})
+									});
+								</script>
 								<?php materialwp_entry_footer(); ?>
 							</footer><!-- .entry-footer -->
 						</div> <!-- .entry-container -->
